@@ -6,47 +6,54 @@ from datetime import datetime
 
 import sqlite3
 
+import contextlib
+
+@contextlib.contextmanager
+def sqlite_session():
+    conn = sqlite3.connect('waste_schedule.db')
+    try:
+        cursor = conn.cursor()
+        yield cursor
+        conn.commit()
+    except sqlite3.Error as e:
+        print(f"An error occurred: {e}")
+        conn.rollback()
+    finally:
+        conn.close()
+
 
 def create_database():
-    conn = sqlite3.connect('waste_schedule.db')
-    cursor = conn.cursor()
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS processed_events (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            event_name TEXT NOT NULL,
-            event_date TEXT NOT NULL,
-            UNIQUE(event_name, event_date) -- Prevent duplicate entries
-        )
-    """)
-    conn.commit()
-    conn.close()
+    with sqlite_session() as cursor:
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS processed_events (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                event_name TEXT NOT NULL,
+                event_date TEXT NOT NULL,
+                UNIQUE(event_name, event_date) -- Prevent duplicate entries
+            )
+        """)
 
 
 def check_processed(event_name, event_date):
-    conn = sqlite3.connect('waste_schedule.db')
-    cursor = conn.cursor()
-    cursor.execute(
-        """
-        SELECT * FROM processed_events WHERE event_name = ? AND event_date = ?
-    """,
-        (event_name, event_date),
-    )
-    result = cursor.fetchone()
-    conn.close()
+    with sqlite_session() as cursor:
+        cursor.execute(
+            """
+            SELECT * FROM processed_events WHERE event_name = ? AND event_date = ?
+            """,
+            (event_name, event_date),
+        )
+        result = cursor.fetchone()
     return result is not None
 
 
 def mark_processed(event_name, event_date):
-    conn = sqlite3.connect('waste_schedule.db')
-    cursor = conn.cursor()
-    cursor.execute(
-        """
-        INSERT INTO processed_events (event_name, event_date) VALUES (?, ?)
-    """,
-        (event_name, event_date),
-    )
-    conn.commit()
-    conn.close()
+    with sqlite_session() as cursor:
+        cursor.execute(
+            """
+            INSERT INTO processed_events (event_name, event_date) VALUES (?, ?)
+            """,
+            (event_name, event_date),
+        )
 
 
 def fetch_data():
@@ -124,20 +131,16 @@ def show_table(data):
 
 
 def get_next_events():
-    conn = sqlite3.connect('waste_schedule.db')
-    cursor = conn.cursor()
     current_date = datetime.now().strftime('%Y-%m-%d')
     
-    cursor.execute("""
-        SELECT event_name, MIN(event_date) as next_date
-        FROM processed_events
-        WHERE event_date >= ?
-        GROUP BY event_name
-        ORDER BY next_date
-    """, (current_date,))
-    
-    results = cursor.fetchall()
-    conn.close()
+    with sqlite_session() as cursor:
+        results = cursor.execute("""
+            SELECT event_name, MIN(event_date) as next_date
+            FROM processed_events
+            WHERE event_date >= :current_date
+            GROUP BY event_name
+            ORDER BY next_date
+        """, {'current_date': current_date}).fetchall()
     
     return results
 
