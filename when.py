@@ -69,8 +69,10 @@ def fetch_data():
 
     response = httpx.get(url, headers=headers)
     data = response.json()[0]
-    # Extracting the required information
-    return data.get('harmonogramy', [])
+    harmonogramy = data.get('harmonogramy', [])
+    harmonogramyN = data.get('harmonogramyN', [])
+    harmonogramyZ = data.get('harmonogramyZ', [])
+    return harmonogramyZ or harmonogramyN or harmonogramy
 
 
 def extract_data(data):
@@ -162,7 +164,7 @@ if __name__ == '__main__':
     create_database()
     data = fetch_data()
     data = extract_data(data)
-    # export_calendar(data)
+    export_calendar(data)
     show_table(data)
     
     next_events = get_next_events()
