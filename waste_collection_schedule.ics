@@ -2,9 +2,9 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20241127
-DESCRIPTION:Wywóz śmieci 🚮 Niesegregowane komunalne
-SUMMARY:🚮 Niesegregowane komunalne
-UID:57a7c501-0ad1-4a92-8dff-d190f20b7558@57a7.org
+DTSTART;VALUE=DATE:20241126
+DESCRIPTION:Wywóz śmieci 🚮 Bio
+SUMMARY:🚮 Bio
+UID:bb463add-0ee6-48ab-9872-c39919773724@bb46.org
 END:VEVENT
 END:VCALENDAR
