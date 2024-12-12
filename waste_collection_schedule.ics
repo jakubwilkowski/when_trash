@@ -2,15 +2,9 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20241217
-DESCRIPTION:Wywóz śmieci 🚮 Bio
-SUMMARY:🚮 Bio
-UID:727ffb0e-3682-4a56-ad35-4e7137858d54@727f.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20250121
-DESCRIPTION:Wywóz śmieci 🚮 Odpady zielone
-SUMMARY:🚮 Odpady zielone
-UID:263fb703-08fe-49fa-b428-008b0561fe4a@263f.org
+DTSTART;VALUE=DATE:20241220
+DESCRIPTION:Wywóz śmieci 🚮 Niesegregowane komunalne
+SUMMARY:🚮 Niesegregowane komunalne
+UID:725761bc-b194-442b-8c3a-3aa13879f68c@7257.org
 END:VEVENT
 END:VCALENDAR
