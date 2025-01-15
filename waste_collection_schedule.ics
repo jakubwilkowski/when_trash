@@ -2,15 +2,9 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20250130
-DESCRIPTION:Wywóz śmieci 🚮 Gabaryty
-SUMMARY:🚮 Gabaryty
-UID:c51d37ca-d19a-410f-aa6d-4cb18e6c1678@c51d.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20250122
-DESCRIPTION:Wywóz śmieci 🚮 Niesegregowane komunalne
-SUMMARY:🚮 Niesegregowane komunalne
-UID:767c6002-bed2-4b4d-8149-ff3653ea984a@767c.org
+DTSTART;VALUE=DATE:20250121
+DESCRIPTION:Wywóz śmieci 🚮 Bio
+SUMMARY:🚮 Bio
+UID:a8549e04-769f-46d2-ba20-82b573cba9c1@a854.org
 END:VEVENT
 END:VCALENDAR
