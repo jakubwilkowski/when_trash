@@ -160,6 +160,26 @@ def update_upcoming_md(next_events):
         f.write(f"\n\n*Last updated: {current_time}*\n")
 
 
+def update_waste_table(next_events):
+    # Read the HTML template
+    with open('waste_table.html', 'r') as f:
+        template = f.read()
+    
+    # Generate table rows
+    table_rows = []
+    for event_name, next_date in next_events:
+        table_rows.append(f'<tr><td>{event_name}</td><td>{next_date}</td></tr>')
+    
+    # Replace placeholders in template
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    html_content = template.replace('{{TABLE_CONTENT}}', '\n'.join(table_rows))
+    html_content = html_content.replace('{{LAST_UPDATED}}', current_time)
+    
+    # Write the generated HTML
+    with open('waste_table.html', 'w') as f:
+        f.write(html_content)
+
+
 if __name__ == '__main__':
     create_database()
     data = fetch_data()
@@ -169,5 +189,6 @@ if __name__ == '__main__':
     
     next_events = get_next_events()
     update_upcoming_md(next_events)
+    update_waste_table(next_events)
     
-    print("\nNext upcoming events have been written to upcoming.md")
+    print("\nNext upcoming events have been written to upcoming.md and waste_table.html")
