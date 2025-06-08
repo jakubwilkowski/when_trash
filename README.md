@@ -1,13 +1,12 @@
 # Waste Collection Schedule
 
-This project automates the process of fetching and displaying upcoming waste collection dates for different types of waste. It uses data from a local waste management API to create a calendar of events and maintain an up-to-date schedule.
+This project automates the process of fetching and displaying upcoming waste collection dates for different types of waste. It uses data from a local waste management API to maintain an up-to-date schedule in both markdown and HTML formats.
 
 ## Features
 
 - Fetches waste collection data from a local API
-- Creates and updates an iCalendar file with collection events
-- Maintains a SQLite database to track processed events
 - Generates an up-to-date markdown file with upcoming collection dates
+- Creates a clean, responsive HTML page
 - Runs daily via GitHub Actions to ensure the schedule is always current
 
 ## Setup
@@ -35,17 +34,18 @@ To set up this project locally:
    python when.py
    ```
 
-This will create the SQLite database, fetch the latest data, and update the `upcoming.md` file.
+This will fetch the latest data and update both the `waste_table.md` and `waste_table.html` files.
 
 ## Usage
 
 After setup, the script will:
 - Fetch the latest waste collection data
-- Update the SQLite database with new events
-- Generate an updated `waste_collection_schedule.ics` file (if there are new events)
-- Update the `upcoming.md` file with the next collection dates for each waste type
+- Update the `waste_table.md` file with the next collection dates for each waste type
+- Generate a responsive HTML page in `waste_table.html`
 
-To view the upcoming waste collection dates, check the [Upcoming Waste Collection Dates](upcoming.md) file.
+To view the upcoming waste collection dates, you can:
+- Check the [Waste Collection Schedule](waste_table.md) file
+- Open `waste_table.html` in a web browser
 
 ## Automated Updates
 

@@ -1,59 +1,5 @@
 import httpx
-from ics import Calendar
-
-from ics import Event
 from datetime import datetime
-
-import sqlite3
-
-import contextlib
-
-@contextlib.contextmanager
-def sqlite_session():
-    conn = sqlite3.connect('waste_schedule.db')
-    try:
-        cursor = conn.cursor()
-        yield cursor
-        conn.commit()
-    except sqlite3.Error as e:
-        print(f"An error occurred: {e}")
-        conn.rollback()
-    finally:
-        conn.close()
-
-
-def create_database():
-    with sqlite_session() as cursor:
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS processed_events (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                event_name TEXT NOT NULL,
-                event_date TEXT NOT NULL,
-                UNIQUE(event_name, event_date) -- Prevent duplicate entries
-            )
-        """)
-
-
-def check_processed(event_name, event_date):
-    with sqlite_session() as cursor:
-        cursor.execute(
-            """
-            SELECT * FROM processed_events WHERE event_name = ? AND event_date = ?
-            """,
-            (event_name, event_date),
-        )
-        result = cursor.fetchone()
-    return result is not None
-
-
-def mark_processed(event_name, event_date):
-    with sqlite_session() as cursor:
-        cursor.execute(
-            """
-            INSERT INTO processed_events (event_name, event_date) VALUES (?, ?)
-            """,
-            (event_name, event_date),
-        )
 
 
 def fetch_data():
@@ -98,30 +44,20 @@ def extract_data(data):
     return results
 
 
-def export_calendar(data):
-    # Create a calendar
-    calendar = Calendar()
-    any_new_events = False
+def get_next_events(data):
+    # Sort by date and get the next event for each waste type
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    next_events = {}
+    
     for item in data:
-        # Create a calendar event
-
-        event_name = f"🚮 {item['name']}"
-        event_date = item['date']
-
-        if not check_processed(item['name'], event_date):
-            any_new_events = True
-            event = Event()
-            event.name = event_name
-            event.begin = datetime.strptime(event_date, '%Y-%m-%d').date()  # Start date
-            event.description = f'Wywóz śmieci {event.name}'
-            event.make_all_day()
-            calendar.events.add(event)
-            mark_processed(item['name'], event_date)
-
-    # Save calendar to a file
-    if any_new_events:
-        with open('waste_collection_schedule.ics', 'w') as f:
-            f.writelines(calendar)
+        name = item['name']
+        date = item['date']
+        if date >= current_date:
+            if name not in next_events or date < next_events[name]:
+                next_events[name] = date
+    
+    # Convert to sorted list of tuples
+    return sorted(next_events.items(), key=lambda x: x[1])
 
 
 def show_table(data):
@@ -132,29 +68,14 @@ def show_table(data):
         print(f"{result['name']:<30} {result['date']:<15}")
 
 
-def get_next_events():
-    current_date = datetime.now().strftime('%Y-%m-%d')
-    
-    with sqlite_session() as cursor:
-        results = cursor.execute("""
-            SELECT event_name, MIN(event_date) as next_date
-            FROM processed_events
-            WHERE event_date >= :current_date
-            GROUP BY event_name
-            ORDER BY next_date
-        """, {'current_date': current_date}).fetchall()
-    
-    return results
-
-
-def update_upcoming_md(next_events):
+def update_markdown(next_events):
     table_content = "| Waste Type | Next Collection Date |\n|------------|----------------------|\n"
     for event_name, next_date in next_events:
         table_content += f"| {event_name} | {next_date} |\n"
     
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    with open('upcoming.md', 'w') as f:
+    with open('waste_table.md', 'w') as f:
         f.write("# Upcoming Waste Collection Dates\n\n")
         f.write(table_content)
         f.write(f"\n\n*Last updated: {current_time}*\n")
@@ -181,14 +102,12 @@ def update_waste_table(next_events):
 
 
 if __name__ == '__main__':
-    create_database()
     data = fetch_data()
     data = extract_data(data)
-    export_calendar(data)
     show_table(data)
     
-    next_events = get_next_events()
-    update_upcoming_md(next_events)
+    next_events = get_next_events(data)
+    update_markdown(next_events)
     update_waste_table(next_events)
     
-    print("\nNext upcoming events have been written to upcoming.md and waste_table.html")
+    print("\nNext upcoming events have been written to waste_table.md and waste_table.html")
