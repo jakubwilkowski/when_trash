@@ -161,21 +161,21 @@ def update_upcoming_md(next_events):
 
 
 def update_waste_table(next_events):
-    # Read the HTML template
-    with open('waste_table.html', 'r') as f:
+    # Read the template
+    with open('template.html', 'r') as f:
         template = f.read()
     
     # Generate table rows
     table_rows = []
     for event_name, next_date in next_events:
-        table_rows.append(f'<tr><td>{event_name}</td><td>{next_date}</td></tr>')
+        table_rows.append(f'                <tr><td>{event_name}</td><td>{next_date}</td></tr>')
     
-    # Replace placeholders in template
+    # Replace placeholders
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    html_content = template.replace('{{TABLE_CONTENT}}', '\n'.join(table_rows))
+    html_content = template.replace('{{TABLE_ROWS}}', '\n'.join(table_rows))
     html_content = html_content.replace('{{LAST_UPDATED}}', current_time)
     
-    # Write the generated HTML
+    # Write the complete HTML file
     with open('waste_table.html', 'w') as f:
         f.write(html_content)
 
