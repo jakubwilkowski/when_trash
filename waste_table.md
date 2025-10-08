@@ -2,8 +2,8 @@
 
 | Waste Type | Next Collection Date |
 |------------|----------------------|
-| Bio | 2025-10-07 |
 | Odpady zielone | 2025-10-14 |
+| Bio | 2025-10-14 |
 | Niesegregowane komunalne | 2025-10-15 |
 | Gabaryty | 2025-10-16 |
 | Papier | 2025-10-27 |
@@ -11,4 +11,4 @@
 | Szkło | 2025-10-27 |
 
 
-*Last updated: 2025-10-07 02:14:51*
+*Last updated: 2025-10-08 02:14:44*
