@@ -10,4 +10,4 @@
 | Niesegregowane komunalne | 2025-10-29 |
 
 
-*Last updated: 2025-10-23 02:20:02*
+*Last updated: 2025-10-24 02:16:33*
