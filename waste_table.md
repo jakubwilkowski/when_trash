@@ -8,6 +8,7 @@
 | Bio | 2025-12-23 |
 | Niesegregowane komunalne | 2025-12-30 |
 | Odpady zielone | 2026-01-20 |
+| Gabaryty | 2026-01-29 |
 
 
-*Last updated: 2025-12-18 02:43:14*
+*Last updated: 2025-12-19 02:46:28*
