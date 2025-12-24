@@ -2,7 +2,7 @@
 
 | Waste Type | Next Collection Date |
 |------------|----------------------|
-| Bio | 2025-12-23 |
+| Bio | 2025-12-30 |
 | Niesegregowane komunalne | 2025-12-30 |
 | Papier | 2026-01-19 |
 | Metal i plastik | 2026-01-19 |
@@ -11,4 +11,4 @@
 | Gabaryty | 2026-01-29 |
 
 
-*Last updated: 2025-12-23 02:48:33*
+*Last updated: 2025-12-24 02:45:42*
