@@ -1,4 +1,5 @@
 import httpx
+import json
 from datetime import datetime
 
 
@@ -101,6 +102,14 @@ def update_waste_table(next_events):
         f.write(html_content)
 
 
+def save_json(next_events):
+    json_data = [{'waste_type': name, 'next_collection_date': date} 
+                        for name, date in next_events]
+    
+    with open('waste_data.json', 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, indent=2, ensure_ascii=False)
+
+
 if __name__ == '__main__':
     data = fetch_data()
     data = extract_data(data)
@@ -109,5 +118,6 @@ if __name__ == '__main__':
     next_events = get_next_events(data)
     update_markdown(next_events)
     update_waste_table(next_events)
+    save_json(next_events)
     
-    print("\nNext upcoming events have been written to waste_table.md and waste_table.html")
+    print("\nNext upcoming events have been written to waste_table.md, waste_table.html, and waste_data.json")

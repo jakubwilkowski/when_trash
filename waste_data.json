@@ -1,0 +1,30 @@
+[
+  {
+    "waste_type": "Papier",
+    "next_collection_date": "2026-01-19"
+  },
+  {
+    "waste_type": "Metal i plastik",
+    "next_collection_date": "2026-01-19"
+  },
+  {
+    "waste_type": "Szkło",
+    "next_collection_date": "2026-01-19"
+  },
+  {
+    "waste_type": "Odpady zielone",
+    "next_collection_date": "2026-01-20"
+  },
+  {
+    "waste_type": "Bio",
+    "next_collection_date": "2026-01-20"
+  },
+  {
+    "waste_type": "Niesegregowane komunalne",
+    "next_collection_date": "2026-01-21"
+  },
+  {
+    "waste_type": "Gabaryty",
+    "next_collection_date": "2026-01-29"
+  }
+]
