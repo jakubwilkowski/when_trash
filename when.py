@@ -1,6 +1,6 @@
 import httpx
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def fetch_data():
@@ -110,6 +110,25 @@ def save_json(next_events):
         json.dump(json_data, f, indent=2, ensure_ascii=False)
 
 
+def save_today_tomorrow_json(data):
+    today = datetime.now().date()
+    tomorrow = today + timedelta(days=1)
+    today_str = today.strftime('%Y-%m-%d')
+    tomorrow_str = tomorrow.strftime('%Y-%m-%d')
+    
+    today_waste = [item['name'] for item in data if item['date'] == today_str]
+    tomorrow_waste = [item['name'] for item in data if item['date'] == tomorrow_str]
+    
+    json_data = {
+        'date': today_str,
+        'today': sorted(today_waste),
+        'tomorrow': sorted(tomorrow_waste)
+    }
+    
+    with open('waste_today_tomorrow.json', 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, indent=2, ensure_ascii=False)
+
+
 if __name__ == '__main__':
     data = fetch_data()
     data = extract_data(data)
@@ -119,5 +138,7 @@ if __name__ == '__main__':
     update_markdown(next_events)
     update_waste_table(next_events)
     save_json(next_events)
+    save_today_tomorrow_json(data)
     
     print("\nNext upcoming events have been written to waste_table.md, waste_table.html, and waste_data.json")
+    print("Today and tomorrow schedules have been written to waste_today_tomorrow.json")
