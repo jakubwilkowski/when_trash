@@ -1,10 +1,7 @@
 {
-  "date": "2026-01-20",
+  "date": "2026-01-21",
   "today": [
-    "Bio",
-    "Odpady zielone"
-  ],
-  "tomorrow": [
     "Niesegregowane komunalne"
-  ]
+  ],
+  "tomorrow": []
 }
