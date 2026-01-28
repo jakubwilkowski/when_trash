@@ -1,11 +1,11 @@
 [
   {
-    "waste_type": "Bio",
-    "next_collection_date": "2026-01-27"
-  },
-  {
     "waste_type": "Gabaryty",
     "next_collection_date": "2026-01-29"
+  },
+  {
+    "waste_type": "Bio",
+    "next_collection_date": "2026-02-03"
   },
   {
     "waste_type": "Niesegregowane komunalne",
