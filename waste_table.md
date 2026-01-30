@@ -2,7 +2,6 @@
 
 | Waste Type | Next Collection Date |
 |------------|----------------------|
-| Gabaryty | 2026-01-29 |
 | Bio | 2026-02-03 |
 | Niesegregowane komunalne | 2026-02-04 |
 | Papier | 2026-02-16 |
@@ -11,4 +10,4 @@
 | Odpady zielone | 2026-02-17 |
 
 
-*Last updated: 2026-01-29 03:19:13*
+*Last updated: 2026-01-30 03:21:21*
