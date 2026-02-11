@@ -1,9 +1,5 @@
 [
   {
-    "waste_type": "Bio",
-    "next_collection_date": "2026-02-10"
-  },
-  {
     "waste_type": "Papier",
     "next_collection_date": "2026-02-16"
   },
@@ -17,6 +13,10 @@
   },
   {
     "waste_type": "Odpady zielone",
+    "next_collection_date": "2026-02-17"
+  },
+  {
+    "waste_type": "Bio",
     "next_collection_date": "2026-02-17"
   },
   {
