@@ -1,9 +1,12 @@
 {
-  "date": "2026-02-15",
-  "today": [],
-  "tomorrow": [
+  "date": "2026-02-16",
+  "today": [
     "Metal i plastik",
     "Papier",
     "Szkło"
+  ],
+  "tomorrow": [
+    "Bio",
+    "Odpady zielone"
   ]
 }
