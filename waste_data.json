@@ -1,17 +1,5 @@
 [
   {
-    "waste_type": "Papier",
-    "next_collection_date": "2026-02-16"
-  },
-  {
-    "waste_type": "Metal i plastik",
-    "next_collection_date": "2026-02-16"
-  },
-  {
-    "waste_type": "Szkło",
-    "next_collection_date": "2026-02-16"
-  },
-  {
     "waste_type": "Odpady zielone",
     "next_collection_date": "2026-02-17"
   },
@@ -22,5 +10,17 @@
   {
     "waste_type": "Niesegregowane komunalne",
     "next_collection_date": "2026-02-18"
+  },
+  {
+    "waste_type": "Papier",
+    "next_collection_date": "2026-03-16"
+  },
+  {
+    "waste_type": "Metal i plastik",
+    "next_collection_date": "2026-03-16"
+  },
+  {
+    "waste_type": "Szkło",
+    "next_collection_date": "2026-03-16"
   }
 ]

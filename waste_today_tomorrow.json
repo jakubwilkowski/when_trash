@@ -1,12 +1,10 @@
 {
-  "date": "2026-02-16",
+  "date": "2026-02-17",
   "today": [
-    "Metal i plastik",
-    "Papier",
-    "Szkło"
-  ],
-  "tomorrow": [
     "Bio",
     "Odpady zielone"
+  ],
+  "tomorrow": [
+    "Niesegregowane komunalne"
   ]
 }
