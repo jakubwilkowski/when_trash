@@ -1,26 +1,26 @@
 [
   {
-    "waste_type": "Odpady zielone",
-    "next_collection_date": "2026-03-31"
-  },
-  {
     "waste_type": "Bio",
-    "next_collection_date": "2026-03-31"
+    "next_collection_date": "2026-04-03"
   },
   {
     "waste_type": "Niesegregowane komunalne",
-    "next_collection_date": "2026-04-01"
-  },
-  {
-    "waste_type": "Papier",
-    "next_collection_date": "2026-04-13"
-  },
-  {
-    "waste_type": "Metal i plastik",
-    "next_collection_date": "2026-04-13"
+    "next_collection_date": "2026-04-07"
   },
   {
     "waste_type": "Szkło",
+    "next_collection_date": "2026-04-08"
+  },
+  {
+    "waste_type": "Metal i plastik",
+    "next_collection_date": "2026-04-09"
+  },
+  {
+    "waste_type": "Odpady zielone",
     "next_collection_date": "2026-04-13"
+  },
+  {
+    "waste_type": "Papier",
+    "next_collection_date": "2026-04-22"
   }
 ]
