@@ -1,9 +1,5 @@
 [
   {
-    "waste_type": "Szkło",
-    "next_collection_date": "2026-04-08"
-  },
-  {
     "waste_type": "Metal i plastik",
     "next_collection_date": "2026-04-09"
   },
@@ -12,15 +8,19 @@
     "next_collection_date": "2026-04-11"
   },
   {
-    "waste_type": "Papier",
+    "waste_type": "Odpady zielone",
     "next_collection_date": "2026-04-13"
   },
   {
-    "waste_type": "Odpady zielone",
-    "next_collection_date": "2026-04-14"
+    "waste_type": "Niesegregowane komunalne",
+    "next_collection_date": "2026-04-20"
   },
   {
-    "waste_type": "Niesegregowane komunalne",
-    "next_collection_date": "2026-04-15"
+    "waste_type": "Papier",
+    "next_collection_date": "2026-04-22"
+  },
+  {
+    "waste_type": "Szkło",
+    "next_collection_date": "2026-05-05"
   }
 ]
