@@ -5,9 +5,9 @@
 | Bio | 2026-05-29 |
 | Szkło | 2026-06-02 |
 | Metal i plastik | 2026-06-03 |
-| Niesegregowane komunalne | 2026-06-04 |
+| Niesegregowane komunalne | 2026-06-05 |
 | Odpady zielone | 2026-06-08 |
 | Papier | 2026-06-17 |
 
 
-*Last updated: 2026-05-26 04:55:03*
+*Last updated: 2026-05-27 05:06:47*
