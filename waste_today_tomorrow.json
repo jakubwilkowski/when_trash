@@ -1,7 +1,9 @@
 {
-  "date": "2026-06-01",
-  "today": [],
-  "tomorrow": [
+  "date": "2026-06-02",
+  "today": [
     "Szkło"
+  ],
+  "tomorrow": [
+    "Metal i plastik"
   ]
 }
