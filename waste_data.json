@@ -1,9 +1,5 @@
 [
   {
-    "waste_type": "Bio",
-    "next_collection_date": "2026-06-26"
-  },
-  {
     "waste_type": "Szkło",
     "next_collection_date": "2026-06-30"
   },
@@ -14,6 +10,10 @@
   {
     "waste_type": "Niesegregowane komunalne",
     "next_collection_date": "2026-07-02"
+  },
+  {
+    "waste_type": "Bio",
+    "next_collection_date": "2026-07-03"
   },
   {
     "waste_type": "Odpady zielone",
