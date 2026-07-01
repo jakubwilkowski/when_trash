@@ -1,9 +1,5 @@
 [
   {
-    "waste_type": "Szkło",
-    "next_collection_date": "2026-06-30"
-  },
-  {
     "waste_type": "Metal i plastik",
     "next_collection_date": "2026-07-01"
   },
@@ -22,5 +18,9 @@
   {
     "waste_type": "Papier",
     "next_collection_date": "2026-07-15"
+  },
+  {
+    "waste_type": "Szkło",
+    "next_collection_date": "2026-07-28"
   }
 ]
