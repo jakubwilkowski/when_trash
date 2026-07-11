@@ -1,15 +1,15 @@
 [
   {
-    "waste_type": "Bio",
-    "next_collection_date": "2026-07-10"
-  },
-  {
     "waste_type": "Papier",
     "next_collection_date": "2026-07-15"
   },
   {
     "waste_type": "Niesegregowane komunalne",
     "next_collection_date": "2026-07-16"
+  },
+  {
+    "waste_type": "Bio",
+    "next_collection_date": "2026-07-17"
   },
   {
     "waste_type": "Odpady zielone",
