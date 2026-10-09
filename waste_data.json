@@ -1,9 +1,5 @@
 [
   {
-    "waste_type": "Niesegregowane komunalne",
-    "next_collection_date": "2026-10-08"
-  },
-  {
     "waste_type": "Bio",
     "next_collection_date": "2026-10-09"
   },
@@ -18,6 +14,10 @@
   {
     "waste_type": "Metal i plastik",
     "next_collection_date": "2026-10-21"
+  },
+  {
+    "waste_type": "Niesegregowane komunalne",
+    "next_collection_date": "2026-10-22"
   },
   {
     "waste_type": "Papier",
