@@ -1,9 +1,5 @@
 [
   {
-    "waste_type": "Metal i plastik",
-    "next_collection_date": "2026-10-21"
-  },
-  {
     "waste_type": "Niesegregowane komunalne",
     "next_collection_date": "2026-10-22"
   },
@@ -22,5 +18,9 @@
   {
     "waste_type": "Szkło",
     "next_collection_date": "2026-11-17"
+  },
+  {
+    "waste_type": "Metal i plastik",
+    "next_collection_date": "2026-11-18"
   }
 ]
