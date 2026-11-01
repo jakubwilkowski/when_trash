@@ -10,4 +10,4 @@
 | Metal i plastik | 2026-11-18 |
 
 
-*Last updated: 2026-10-31 06:24:34*
+*Last updated: 2026-11-01 06:57:50*
