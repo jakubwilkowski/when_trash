@@ -2,12 +2,12 @@
 
 | Waste Type | Next Collection Date |
 |------------|----------------------|
-| Papier | 2026-11-04 |
 | Niesegregowane komunalne | 2026-11-05 |
 | Bio | 2026-11-06 |
 | Odpady zielone | 2026-11-09 |
 | Szkło | 2026-11-17 |
 | Metal i plastik | 2026-11-18 |
+| Papier | 2026-12-02 |
 
 
-*Last updated: 2026-11-04 07:02:41*
+*Last updated: 2026-11-05 07:29:03*
